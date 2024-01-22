@@ -1,6 +1,24 @@
+<!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-   <head></head>
-   <body>
-      <h1 th:text="'Hello ' + ${name} + ' from your first MVC app!'" />
-   </body>
+<head>
+   <meta charset="UTF-8">
+   <title>Superhero list</title>
+   <link rel="stylesheet" href="table.css">
+</head>
+<body>
+<table>
+   <thead>
+   <tr>
+      <th>Superhero ID</th>
+      <th>Superhero name</th>
+   </tr>
+   </thead>
+   <tbody>
+   <tr th:each="hero : ${heroList}">
+      <td th:text="${hero.id}"></td>
+      <td th:text="${hero.name}"></td>
+   </tr>
+   </tbody>
+</table>
+</body>
 </html>
